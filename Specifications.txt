@@ -1,0 +1,32 @@
+Software Main Function
+-	A simple command line interface (CLI)/command line application that simply allows the user to register, authenticate, and recover account
+Rules:
+-	Limit the use of AI.
+-	Code on your own as much as you can.
+-	Use any form of password encryption for user password
+-	Database normalization is not required (for now)
+-	Use JAVA as the programming language
+-	Use MySQL for the database
+Requirements:
+-	Application may only shut down when the user entered “/exit” to the command line
+-	Add a “/help” command that will display all the available command to the user and what those commands do.
+-	Must use any form of password encryption
+Functions/Features
+-	User registration
+o	User are able to register an account in through the command line with the following information:
+	First name
+	Last name
+	Middle name (optional)
+	Age
+	Birth date
+	Gender
+	Username
+	Password
+
+-	User authentication
+o	Allows the registered user to authenticate their registered account
+o	Display the message “Authentication Success!” upon successful login.
+
+-	Account recovery (forgot password)
+o	Allows the user to reset the password of their account using the username.
+o	Note: OTP is not yet required.
