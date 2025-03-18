@@ -58,7 +58,6 @@ public class CLI_Application {
 
             } else {
                 System.out.println("Invalid Input! Please enter a valid option.");
-                continue;
             }
         }
 
