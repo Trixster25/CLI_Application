@@ -28,7 +28,7 @@ public class CLI_Application {
                 String user = input.nextLine();
                 System.out.print("Password: ");
                 String pass = input.nextLine();
-                System.out.println("Logging in with Username: " + user);
+                System.out.println("Welcome " + user);
                 
             } else if (choice == 2) {
                 System.out.print("First Name: ");
