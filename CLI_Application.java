@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class CLI_Application {
-    
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
@@ -15,26 +14,39 @@ public class CLI_Application {
             System.out.println("4. Exit");
 
             System.out.print("Enter choice: ");
-            int choice = input.nextInt();
-            input.nextLine(); 
+            
+            int choice;
+            try {
+                choice = Integer.parseInt(input.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid Input! Please enter a number between 1 and 4.");
+                continue;
+            }
 
             if (choice == 1) {
                 System.out.print("Username: ");
                 String user = input.nextLine();
                 System.out.print("Password: ");
                 String pass = input.nextLine();
-
                 System.out.println("Logging in with Username: " + user);
                 
-
             } else if (choice == 2) {
                 System.out.print("First Name: ");
                 String fname = input.nextLine();
                 System.out.print("Last Name: ");
                 String lname = input.nextLine();
                 System.out.print("Age: ");
-                int age = input.nextInt();
-                input.nextLine(); 
+                
+                int age;
+                while (true) {
+                    try {
+                        age = Integer.parseInt(input.nextLine());
+                        break;
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid Input! Please enter a valid age.");
+                    }
+                }
+                
                 System.out.print("Birthday (YYYY-MM-DD): ");
                 String bday = input.nextLine();
                 System.out.print("Gender: ");
@@ -50,11 +62,10 @@ public class CLI_Application {
                 System.out.print("Enter remembered username: ");
                 String username = input.nextLine();
                 System.out.println("Checking for username: " + username);
-                
 
             } else if (choice == 4) {
                 System.out.println("Thank you for using T-Enterprise!");
-                break; 
+                break;
 
             } else {
                 System.out.println("Invalid Input! Please enter a valid option.");
