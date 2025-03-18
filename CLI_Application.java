@@ -45,13 +45,6 @@ public class CLI_Application {
                 String npass = input.nextLine();
 
                 System.out.println("\nRegistration Successful!");
-                System.out.println("Firstname: " + fname);
-                System.out.println("Lastname: " + lname);
-                System.out.println("Age: " + age);
-                System.out.println("Birthday: " + bday);
-                System.out.println("Gender: " + gen);
-                System.out.println("Username: " + nuser);
-                System.out.println("Password: " + npass);
 
             } else if (choice == 3) {
                 System.out.print("Enter remembered username: ");
