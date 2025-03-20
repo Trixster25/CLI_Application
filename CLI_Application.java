@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class CLI_Application {
     public static void main(String[] args) { 
-           Connection connection = null;
+        Connection connection = null;
         Scanner input = new Scanner(System.in);
   
         while (true) {
             try{
               Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/cli_db", //papalitan yung cli_db depende sa name ng db
-                "<username>", "<password>");
+                "jdbc:mysql://localhost:3306/cli_db", 
+                "root", "admin123");
 
             System.out.println("\n===================================");
             System.out.println("||    Welcome to T-Enterprise    ||");
