@@ -1,10 +1,19 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Scanner;
 
 public class CLI_Application {
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
+           Connection connection = null;
         Scanner input = new Scanner(System.in);
+  
+        while (true) {
+            try{
+              Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/cli_db", //papalitan yung cli_db depende sa name ng db
+                "<username>", "<password>");
 
-        while (true) { 
             System.out.println("\n===================================");
             System.out.println("||    Welcome to T-Enterprise    ||");
             System.out.println("===================================");
@@ -12,17 +21,9 @@ public class CLI_Application {
             System.out.println("2. Register");
             System.out.println("3. Forgot Password");
             System.out.println("4. Exit");
-
             System.out.print("Enter choice: ");
-            
             int choice;
-            try {
-                choice = Integer.parseInt(input.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid Input! Please enter a number between 1 and 4.");
-                continue;
-            }
-
+            choice = Integer.parseInt(input.nextLine());
             if (choice == 1) {
                 System.out.print("Username: ");
                 String user = input.nextLine();
@@ -70,8 +71,18 @@ public class CLI_Application {
             } else {
                 System.out.println("Invalid Input! Please enter a valid option.");
             }
-        }
+        
 
         input.close();
+        
+            }catch (NumberFormatException e) {
+                System.out.println("Invalid Input! Please enter a number between 1 and 4.");
+                continue;
+            }catch(Exception e){
+                System.out.println(e.getMessage());
+            } 
+        }    
+
+            
     }
 }
